@@ -1,11 +1,11 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from schema import HeartDiseaseData
-from heart_disease_predictor import HeartDiseasePredictor
-from transformer import RiskFeatureEngineer
+from .schema import HeartDiseaseData
+from ML.heart_disease_predictor import HeartDiseasePredictor
+
 app = FastAPI()
 
-predictor = HeartDiseasePredictor(model_path="heart_disease_predictor.joblib")
+predictor = HeartDiseasePredictor(model_path="ML/heart_disease_predictor.joblib")
 
 origins = ['*']
 

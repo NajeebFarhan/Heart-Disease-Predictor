@@ -14,28 +14,24 @@ class RiskFeatureEngineer(BaseEstimator, TransformerMixin):
         X[num_cols] = X[num_cols].fillna(X[num_cols].median())
         X[cat_cols] = X[cat_cols].fillna(X[cat_cols].mode())
 
-        # Age group
         X["AgeGroup"] = pd.cut(
             X["Age"],
             bins=[0, 40, 55, np.inf],
             labels=[0, 1, 2]
         ).astype(int)
 
-        # Cholesterol category
         X["CholesterolCategory"] = pd.cut(
             X["Cholesterol"],
             bins=[0, 200, 240, 1000],
             labels=[0, 1, 2]
         ).astype(int)
 
-        # Blood pressure category
         X["BPCategory"] = pd.cut(
             X["BP"],
             bins=[0, 120, 140, 300],
             labels=[0, 1, 2]
         ).astype(int)
 
-        # Risk score
         X["RiskScore"] = (
             (X["Age"] > 50).astype(int) +
             (X["Cholesterol"] > 240).astype(int) +
@@ -44,8 +40,6 @@ class RiskFeatureEngineer(BaseEstimator, TransformerMixin):
         )
 
         # Interactive features
-        # ExerciseAngina × ST_depression
-        # Age × MaxHR
         X["ExerciseAngina x ST_depression"] = X["Exercise angina"] * X["ST depression"]
         X["Age x MaxHR"] = X["Age"] * X["Max HR"]
 
