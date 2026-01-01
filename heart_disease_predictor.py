@@ -4,7 +4,7 @@ from typing import Any
 
 class HeartDiseasePredictor:
     def __init__(self, model_path: str = None, threshold: float = 0.4) -> None:
-        self.model = joblib.load(model_path or "heart_disease_predictor.joblib")
+        self.model = joblib.load(model_path)
         self.threshold = threshold
 
     def predict(self, data: dict[str, Any] | pd.Series) -> tuple[float, int]:
