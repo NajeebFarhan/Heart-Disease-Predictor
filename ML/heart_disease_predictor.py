@@ -3,7 +3,7 @@ import joblib
 from typing import Any
 
 class HeartDiseasePredictor:
-    def __init__(self, model_path: str = None, threshold: float = 0.4) -> None:
+    def __init__(self, model_path: str = None, threshold: float = 0.3) -> None:
         self.model = joblib.load(model_path)
         self.threshold = threshold
 

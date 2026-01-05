@@ -2,6 +2,7 @@ from sklearn.base import BaseEstimator, TransformerMixin
 import pandas as pd
 import numpy as np
 
+# Obsolete code which I am saving for study purpose
 class RiskFeatureEngineer(BaseEstimator, TransformerMixin):
     def fit(self, X, y=None):
         return self
