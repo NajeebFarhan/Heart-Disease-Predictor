@@ -7,6 +7,8 @@ This project is built as a learning exercise to explore:
 - Safe handling of missing inputs
 - Deploying ML models using FastAPI
 
+> [Dataset](https://www.kaggle.com/datasets/neurocipher/heartdisease) used in this project
+
 **⚠️ Disclaimer: This project is for educational purposes only and is not medical advice.**
 
 
